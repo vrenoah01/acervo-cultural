@@ -33,6 +33,7 @@ erDiagram
 
     USUARIO ||--o{ OBRA : "publica (se conta de artista)"
     CATEGORIA ||--o{ OBRA : "organiza e filtra"
+```
 
 ### 👤 Coleção: `usuarios.json`
 Responsável por armazenar os dados de todos os visitantes que se cadastram na plataforma, sejam eles usuários padrão, artistas ou apoiadores.
