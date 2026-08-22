@@ -48,7 +48,6 @@ Responsável por armazenar os dados de todos os visitantes que se cadastram na p
 - **`is_artista`**: Campo booleano (`true`/`false`) que define se o usuário marcou a opção "Conta de Artista" no cadastro. Habilita a aba de publicações.
 - **`is_apoiador`**: Campo booleano (`true`/`false`) para identificar se o usuário contribui financeiramente.
 
----
 
 ### 🎨 Coleção: `obras.json`
 Armazena o acervo cultural publicado pelos artistas independentes cadastrados no site.
@@ -60,7 +59,6 @@ Armazena o acervo cultural publicado pelos artistas independentes cadastrados no
 - **`imagem_capa`**: Caminho ou URL da imagem de capa (Formatos aceitos: JPG, PNG).
 - **`artista_id`**: Chave estrangeira que vincula a obra ao ID do usuário (artista) que a publicou.
 
----
 
 ### 🏷️ Coleção: `categorias.json`
 Uma lista estática utilizada para alimentar a barra de navegação e os filtros de busca do sistema.
