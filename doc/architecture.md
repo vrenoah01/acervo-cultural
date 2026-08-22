@@ -1,4 +1,4 @@
-# 🏗️ Especificações Técnicas (Tech Spec) - Projeto Latina
+# 🏗️ 1. Especificações Técnicas (Tech Spec) - Projeto Latina
 
 Este documento descreve a arquitetura técnica, o modelo de dados em formato JSON e as tecnologias que serão utilizadas no desenvolvimento da plataforma **Latina**.
 
@@ -34,7 +34,9 @@ erDiagram
     USUARIO ||--o{ OBRA : "publica (se conta de artista)"
     CATEGORIA ||--o{ OBRA : "organiza e filtra"
 ```
-
+2. Dicionário de Dados
+   Breve explicação do funcionamento do sistema.
+    
 ### 👤 Coleção: `usuarios.json`
 Responsável por armazenar os dados de todos os visitantes que se cadastram na plataforma, sejam eles usuários padrão, artistas ou apoiadores.
 
