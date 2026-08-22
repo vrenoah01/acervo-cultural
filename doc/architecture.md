@@ -34,7 +34,7 @@ erDiagram
     USUARIO ||--o{ OBRA : "publica (se conta de artista)"
     CATEGORIA ||--o{ OBRA : "organiza e filtra"
 ```
-2. Dicionário de Dados
+## 2. Dicionário de Dados
    Breve explicação do funcionamento do sistema.
     
 ### 👤 Coleção: `usuarios.json`
