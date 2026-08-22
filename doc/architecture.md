@@ -76,4 +76,3 @@ As ferramentas escolhidas para o desenvolvimento:
 - **Bootstrap (v5.3+)** 
 - **Figma** 
 - **Google Stitch** 
-- **JSON (JavaScript Object Notation)** 
