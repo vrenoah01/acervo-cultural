@@ -6,7 +6,7 @@
 
 A Latina é um acervo cultural online, dedicado a valorização, divulgação e estímulo da cultura latino-americana em seus diversos campos (cultural, geográfico, artístico, etc). É um espaço onde pessoas podem encontrar livros, autores, músicas, monumentos históricos, lugares, obras audiovisuais e diversos outros assuntos sobre a América Latina. 
 
-O diferencial da plataforma é que artistas, escritores e músicos independentes possam divulgar seus trabalhos de maneira gratuita, apenas efetuando um cadastro em nosso site. Ao se cadastrar os usuários também tem a opção de contribuir financeiramente com o nosso projeto tendo alguns objetivos como participar de fóruns, receber nossa newsletter e ter acesso ao nosso clube de leitura do Apoia-se. 
+O diferencial da plataforma é que artistas, escritores e músicos independentes possam divulgar seus trabalhos de maneira gratuita, apenas efetuando um cadastro em nosso site. Ao se cadastrar os usuários também tem a opção de contribuir financeiramente com o nosso projeto tendo alguns benefícios como participar de fóruns, receber nossa newsletter e ter acesso ao nosso clube de leitura do Apoia-se. 
 
 ---
 
