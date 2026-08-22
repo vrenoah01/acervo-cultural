@@ -71,9 +71,9 @@ Uma lista estática utilizada para alimentar a barra de navegação e os filtros
 
 As ferramentas escolhidas para o desenvolvimento:
 
-- **HTML5 & CSS3:** 
-- **JavaScript (ES6+):** 
-- **Bootstrap (v5.3+):** 
-- **Figma:** 
-- **Google Stitch:** 
-- **JSON (JavaScript Object Notation):** 
+- **HTML5 & CSS3** 
+- **JavaScript (ES6+)** 
+- **Bootstrap (v5.3+)** 
+- **Figma** 
+- **Google Stitch** 
+- **JSON (JavaScript Object Notation)** 
