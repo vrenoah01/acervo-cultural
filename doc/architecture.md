@@ -49,6 +49,7 @@ Responsável por armazenar os dados de todos os visitantes que se cadastram na p
 - **`is_apoiador`**: Campo booleano (`true`/`false`) para identificar se o usuário contribui financeiramente.
 
 
+
 ### 🎨 Coleção: `obras.json`
 Armazena o acervo cultural publicado pelos artistas independentes cadastrados no site.
 
@@ -58,6 +59,7 @@ Armazena o acervo cultural publicado pelos artistas independentes cadastrados no
 - **`categoria`**: Tema principal da obra (ex: Literatura, Música, Audiovisual).
 - **`imagem_capa`**: Caminho ou URL da imagem de capa (Formatos aceitos: JPG, PNG).
 - **`artista_id`**: Chave estrangeira que vincula a obra ao ID do usuário (artista) que a publicou.
+
 
 
 ### 🏷️ Coleção: `categorias.json`
