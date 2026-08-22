@@ -14,7 +14,7 @@ O diferencial da plataforma é que artistas, escritores e músicos independentes
 
 - **Visitante:** Usuário não autenticado que acessa a página inicial e visualiza e pesquisa pelos conteúdos do acervo. 
 - **Usuário cadastrado (Apoiador):** Usuário que se cadastra em nosso site contribuindo com conteúdos autorais ou contribuindo financeiramente com o projeto. 
-- **O Acervo (Sistema):** Espaço online onde o conteúdo estará disponível para pesquisa, visualização e demais atividades, além da criação de novos conteúdos. 
+- **O Acervo (Sistema):** Espaço online onde o conteúdo estará disponível para pesquisa, visualização e demais atividades, além da criação e postagem de novos conteúdos. 
 
 ---
 
