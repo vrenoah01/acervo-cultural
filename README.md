@@ -1,4 +1,10 @@
 # acervo-cultural
+
+#autor - Vinícius Renoah Nascimento
+#disciplina - Desenvolvimento de Página Web com Css e Framework
+#instituição - UTFPR
+
+
 Projeto de um "espaço online" de pesquisa, apreciação e divulgação cultural da América Latina. Utilizando ferramentas como javascript, bootstrap e figma.  
 
 # 📖 Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
