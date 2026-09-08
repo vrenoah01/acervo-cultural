@@ -14,7 +14,7 @@
 ## :wrench: Bootstrap:
 Framework atualizado do CSS, com ótima responsividade em diferentes telas (tablets, desktops e celulares). Em vez de escrever todo o CSS do zero para criar um botão, um menu de navegação ou um layout em colunas, ele ja vem com classes pré-definidas para montar qualquer página.  
 
-## Google Public API: 
+## :books: Google Public API: 
 API popular e fácil de usar. Permite buscar livros por título, autor, ISBN ou texto completo. Retorna sinopses, dados de publicação e links de visualização. 
 
 # 📖 Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
