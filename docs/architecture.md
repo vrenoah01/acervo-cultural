@@ -77,5 +77,5 @@ As ferramentas escolhidas para o desenvolvimento:
 - **HTML5 & CSS3** 
 - **JavaScript (ES6+)** 
 - **Bootstrap (v5.3+)** 
-- **Figma** 
+- **Google Books API** 
 - **Google Stitch** 
