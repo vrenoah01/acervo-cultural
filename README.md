@@ -12,6 +12,7 @@
 # Tecnologias e Dependências
 
 ## Bootstrap:
+Framework atualizado do CSS, com ótima responsividade em diferentes telas (tablets, desktops e celulares). Em vez de escrever todo o CSS do zero para criar um botão, um menu de navegação ou um layout em colunas, ele ja vem com classes pré-definidas para montar qualquer página.  
 
 # 📖 Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
