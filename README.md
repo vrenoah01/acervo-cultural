@@ -9,9 +9,9 @@
 
 **Projeto:** Um "espaço online" de pesquisa, apreciação e divulgação cultural da América Latina. Utilizando ferramentas como javascript, bootstrap e figma.  
 
-# Tecnologias e Dependências
+# Tecnologias e Dependências 
 
-## Bootstrap:
+## :wrench: Bootstrap:
 Framework atualizado do CSS, com ótima responsividade em diferentes telas (tablets, desktops e celulares). Em vez de escrever todo o CSS do zero para criar um botão, um menu de navegação ou um layout em colunas, ele ja vem com classes pré-definidas para montar qualquer página.  
 
 ## Google Public API: 
