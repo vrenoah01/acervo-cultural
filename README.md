@@ -7,7 +7,11 @@
 **instituição** - UTFPR.
 
 
-Projeto de um "espaço online" de pesquisa, apreciação e divulgação cultural da América Latina. Utilizando ferramentas como javascript, bootstrap e figma.  
+**Projeto:** Um "espaço online" de pesquisa, apreciação e divulgação cultural da América Latina. Utilizando ferramentas como javascript, bootstrap e figma.  
+
+# Tecnologias e Dependências
+
+## Bootstrap:
 
 # 📖 Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
