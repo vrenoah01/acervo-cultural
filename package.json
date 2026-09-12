@@ -1,0 +1,30 @@
+{
+  "name": "acervo-cultural",
+  "version": "1.0.0",
+  "description": "**autor** - Vinícius Renoah Nascimento.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrenoah01/acervo-cultural.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vrenoah01/acervo-cultural/issues"
+  },
+  "homepage": "https://github.com/vrenoah01/acervo-cultural#readme",
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
