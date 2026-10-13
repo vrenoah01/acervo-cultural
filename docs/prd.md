@@ -75,10 +75,3 @@ O diferencial da plataforma é que artistas, escritores e músicos independentes
 
 ---
 
-### 🤝 Épico 5: Financiamento e Comunidade (Apoiadores) 
-
-- **US10 – Contribuição financeira:**
-  > Como um usuário, quero acessar uma página de "Apoio" com informações claras sobre os planos e redirecionamento seguro para a plataforma de pagamento (ex: Apoia.se), para ajudar a manter o projeto.
-  
-  **Critérios de Aceitação:**
-  - [ ] Deve existir um link com QR code para o pagamento da contribuição.
