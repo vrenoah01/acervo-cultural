@@ -68,3 +68,20 @@ API pública gratuita com mais de 76 mil obras com título, autor, ano de public
 - [x] Instalei gh-pages como dependência de desenvolvimento
 - [x] Fiz commit e push para a branch main
 
+---
+
+## 🏛️ Telas do Projeto Latina: Arquivo Cultural Minimalista (Exportadas via Stitch MCP)
+
+As telas desenvolvidas utilizando o **Google Stitch (IA)** e implementadas com **Bootstrap 5 (local via NPM)** estão organizadas nas seguintes pastas:
+
+1. **[`01_arquivo_cultural/index.html`](./01_arquivo_cultural/index.html)**: Layout principal com Hero, catálogo de obras e grid de destaques.
+2. **[`02_cadastro_usuario/index.html`](./02_cadastro_usuario/index.html)**: Formulário de registro de novos membros/usuários.
+3. **[`03_area_membros_sem_obras/index.html`](./03_area_membros_sem_obras/index.html)**: Painel da área de membros em estado inicial (*empty state*).
+4. **[`04_cadastro_obra/index.html`](./04_cadastro_obra/index.html)**: Formulário de submissão e cadastro de novas obras culturais para o acervo.
+5. **[`05_obras_cadastradas/index.html`](./05_obras_cadastradas/index.html)**: Área de membros com listagem das obras cadastradas (grid de cards e Design System).
+
+### Como Executar Localmente
+```bash
+npm install
+python3 -m http.server 3000
+```

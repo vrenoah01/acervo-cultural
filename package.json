@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/vrenoah01/acervo-cultural#readme",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "jquery": "^4.0.0",
     "uuid": "^14.0.2"
   },

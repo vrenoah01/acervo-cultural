@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>LATINA - Register</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --surface-color: #faf9f5;
+            --on-surface-color: #1a1c1a;
+            --secondary-color: #5f5e5b;
+            --terracotta-color: #C85C3B;
+            --outline-color: #747878;
+            --outline-variant-color: #c4c7c7;
+            --paper-darker: #EFEEE9;
+        }
+
+        body {
+            background-color: var(--surface-color);
+            color: var(--on-surface-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-headline {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom Input Styles to match Editorial look */
+        .editorial-input {
+            border: none;
+            border-bottom: 1px solid #1a1c1a;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 8px 0;
+            transition: border-bottom-width 0.2s ease, border-color 0.2s ease;
+        }
+        .editorial-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid var(--terracotta-color);
+            border-color: var(--terracotta-color);
+        }
+        
+        /* Custom Radio/Chip Styles */
+        .type-radio:checked + .type-label {
+            background-color: #f4f4f0;
+            border-color: var(--terracotta-color);
+            color: var(--terracotta-color);
+        }
+
+        .max-w-custom {
+            max-width: 1280px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline !important;
+            text-underline-offset: 4px;
+        }
+    </style>
+</head>
+<body class="min-vh-100 d-flex flex-column">
+
+<!-- TopNavBar -->
+<header class="w-100 sticky-top z-3 bg-surface border-bottom" style="background-color: var(--surface-color); border-color: var(--outline-variant-color) !important;">
+    <div class="d-flex justify-content-between align-items-center w-100 px-3 px-md-5 py-4 max-w-custom mx-auto">
+        <a class="font-headline fw-bold text-dark text-decoration-none" style="font-size: 36px; letter-spacing: -0.05em; color: var(--on-surface-color);" href="/">
+            LATINA
+        </a>
+    </div>
+</header>
+
+<!-- Main Content Canvas -->
+<main class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3 px-md-5 w-100 max-w-custom mx-auto">
+    <div class="w-100" style="max-width: 480px;">
+        <div class="text-center mb-4 mb-md-5">
+            <h1 class="font-headline fw-semibold text-dark mb-2 mb-md-3 mt-3 mt-md-0" style="font-size: 36px; line-height: 44px; letter-spacing: -0.02em;">Join the Archive</h1>
+            <p class="text-secondary mb-0" style="color: var(--secondary-color); font-size: 18px; line-height: 28px;">A curated lens on Latin American heritage.</p>
+        </div>
+        
+        <form class="w-100 d-flex flex-column gap-4">
+            <!-- Account Type Selector (Chips) -->
+            <fieldset class="d-flex flex-column flex-md-row gap-3 justify-content-center mb-2 w-100 border-0 p-0 m-0">
+                <legend class="visually-hidden">Account Type</legend>
+                <div class="position-relative w-100">
+                    <input checked class="type-radio position-absolute opacity-0 pointer-events-none" id="type-common" name="account_type" type="radio" value="comum">
+                    <label class="type-label d-block px-4 py-2 border text-secondary fw-semibold text-center w-100" style="border-color: var(--outline-color); font-size: 14px; min-width: 140px; cursor: pointer; transition: color 0.2s, border-color 0.2s, background-color 0.2s;" for="type-common">
+                        Cadastro Comum
+                    </label>
+                </div>
+                <div class="position-relative w-100">
+                    <input class="type-radio position-absolute opacity-0 pointer-events-none" id="type-artist" name="account_type" type="radio" value="artista">
+                    <label class="type-label d-block px-4 py-2 border text-secondary fw-semibold text-center w-100" style="border-color: var(--outline-color); font-size: 14px; min-width: 140px; cursor: pointer; transition: color 0.2s, border-color 0.2s, background-color 0.2s;" for="type-artist">
+                        Cadastro de Artista
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Username Field -->
+            <div class="d-flex flex-column gap-1">
+                <label class="fw-semibold text-dark" style="font-size: 14px; letter-spacing: 0.02em;" for="username">Username</label>
+                <input class="editorial-input w-100 text-dark" id="username" name="username" required type="text">
+            </div>
+
+            <!-- Email Field -->
+            <div class="d-flex flex-column gap-1">
+                <label class="fw-semibold text-dark" style="font-size: 14px; letter-spacing: 0.02em;" for="email">Email Address</label>
+                <input class="editorial-input w-100 text-dark" id="email" name="email" required type="email">
+            </div>
+
+            <!-- Date of Birth Field -->
+            <div class="d-flex flex-column gap-1">
+                <label class="fw-semibold text-dark" style="font-size: 14px; letter-spacing: 0.02em;" for="dob">Date of Birth</label>
+                <input class="editorial-input w-100 text-dark" id="dob" name="dob" required type="date">
+            </div>
+
+            <!-- Password Field -->
+            <div class="d-flex flex-column gap-1 mb-2">
+                <label class="fw-semibold text-dark" style="font-size: 14px; letter-spacing: 0.02em;" for="password">Password</label>
+                <input class="editorial-input w-100 text-dark" id="password" name="password" required type="password">
+            </div>
+
+            <!-- Submit Button -->
+            <button class="w-100 bg-dark text-white fw-semibold py-3 mt-2 border border-dark text-uppercase" style="background-color: var(--on-surface-color); color: #ffffff; letter-spacing: 0.05em; font-size: 14px; transition: opacity 0.2s;" type="submit">
+                Register
+            </button>
+
+            <div class="text-center mt-4">
+                <p class="text-secondary mb-0" style="font-size: 12px; letter-spacing: 0.05em; font-weight: 500;">
+                    Already have an account? <a class="text-dark text-decoration-underline footer-link" style="text-underline-offset: 4px;" href="/login">Sign in</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="w-100 border-top mt-auto" style="background-color: var(--paper-darker); border-color: var(--outline-variant-color) !important;">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center w-100 px-3 px-md-5 py-5 max-w-custom mx-auto gap-4">
+        <div class="font-headline fw-semibold text-dark fs-4">
+            LATINA
+        </div>
+        <nav class="d-flex gap-4 flex-wrap" style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em;">
+            <a class="text-secondary text-decoration-none footer-link" href="/archives">Archives</a>
+            <a class="text-secondary text-decoration-none footer-link" href="/about">About</a>
+            <a class="text-secondary text-decoration-none footer-link" href="/submit">Submit</a>
+            <a class="text-secondary text-decoration-none footer-link" href="/legal">Legal</a>
+        </nav>
+        <div class="text-secondary" style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em;">
+            © 2024 LATINA. An archival lens on Latin American heritage.
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5.3.3 JS Bundle -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

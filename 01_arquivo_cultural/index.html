@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LATINA - A América Latina, contada por suas referências</title>
+<!-- Bootstrap CSS -->
+<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+        :root {
+            --surface: #faf9f5;
+            --on-surface: #1a1c1a;
+            --primary: #000000;
+            --on-primary: #ffffff;
+            --secondary: #5f5e5b;
+            --outline-variant: #c4c7c7;
+            --terracotta: #C85C3B;
+            --petrol-blue: #28566B;
+            --deep-green: #315C4B;
+            --paper-darker: #EFEEE9;
+            --secondary-fixed-dim: #c8c6c2;
+            --burnt-yellow: #D9A441;
+            
+            --font-body: 'Inter', sans-serif;
+            --font-headline: 'Playfair Display', serif;
+        }
+        
+        body {
+            background-color: var(--surface);
+            color: var(--on-surface);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, .font-headline {
+            font-family: var(--font-headline);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--outline-variant);
+        }
+        .navbar-brand {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 2.25rem;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+        .nav-link {
+            color: var(--secondary);
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--terracotta);
+        }
+        .btn-primary-custom {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+            border-radius: 0;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--primary);
+        }
+        .btn-primary-custom:hover {
+            opacity: 0.9;
+            color: var(--on-primary);
+        }
+        .btn-outline-custom {
+            background-color: transparent;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+            border-radius: 0;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--primary);
+        }
+        .btn-outline-custom:hover {
+            background-color: var(--primary);
+            color: var(--on-primary);
+        }
+
+        /* Hero */
+        .hero-section {
+            padding: 6rem 0;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        .hero-text {
+            font-size: 1.125rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+        .hero-image-container {
+            border: 1px solid var(--outline-variant);
+            padding: 1rem;
+            background-color: var(--paper-darker);
+            aspect-ratio: 3/4;
+            max-width: 350px;
+            margin-left: auto;
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            opacity: 0.9;
+            mix-blend-mode: multiply;
+        }
+
+        /* Explore */
+        .explore-section {
+            padding: 6rem 0;
+            border-top: 1px solid var(--outline-variant);
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        .category-card {
+            border: 1px solid var(--outline-variant);
+            padding: 2rem;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s;
+            height: 100%;
+        }
+        .category-card:hover {
+            background-color: var(--paper-darker);
+        }
+        .category-card .decor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6rem;
+            height: 6rem;
+            opacity: 0.1;
+            border-bottom-left-radius: 9999px;
+            transform: translate(3rem, -3rem);
+            transition: transform 0.5s;
+        }
+        .category-card:hover .decor {
+            transform: translate(1rem, -1rem);
+        }
+        .category-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .category-text {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Featured */
+        .featured-section {
+            background-color: var(--paper-darker);
+            padding: 6rem 0;
+        }
+        .featured-img-container {
+            border: 1px solid var(--outline-variant);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .featured-img-large {
+            aspect-ratio: 16/9;
+        }
+        .featured-img-small {
+            aspect-ratio: 3/4;
+        }
+        .featured-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease-out;
+        }
+        .featured-article:hover img {
+            transform: scale(1.05);
+        }
+        .tag-outline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid;
+        }
+        .featured-title {
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+        .featured-article:hover .title-terracotta { color: var(--terracotta); }
+        .featured-article:hover .title-petrol { color: var(--petrol-blue); }
+
+        /* Origins */
+        .origins-section {
+            padding: 8rem 0;
+            text-align: center;
+        }
+        .origins-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+        .origins-text {
+            font-size: 2.25rem;
+            line-height: 1.6;
+            color: var(--primary);
+            opacity: 0.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .origins-dot {
+            color: var(--secondary-fixed-dim);
+            padding: 0 0.5rem;
+        }
+
+        /* Footer */
+        .footer-custom {
+            background-color: var(--paper-darker);
+            border-top: 1px solid var(--outline-variant);
+            padding: 4rem 0;
+            margin-top: auto;
+        }
+        .footer-brand {
+            font-family: var(--font-headline);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .footer-text {
+            color: var(--secondary);
+            font-size: 0.875rem;
+        }
+        .footer-link {
+            color: var(--secondary);
+            font-size: 0.875rem;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<!-- TopNavBar -->
+<nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
+<div class="container-lg px-5">
+<a class="navbar-brand m-0 p-0" href="#">LATINA</a>
+<button aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0 shadow-none text-dark" data-bs-target="#navbarContent" data-bs-toggle="collapse" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="collapse navbar-collapse" id="navbarContent">
+<ul class="navbar-nav mx-auto mb-2 mb-md-0 gap-3">
+<li class="nav-item"><a class="nav-link" href="#">Music</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Films</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Artists</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Places</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Culture</a></li>
+</ul>
+<div class="d-flex align-items-center gap-3 flex-wrap">
+<button class="btn btn-link p-0 text-dark text-decoration-none shadow-none"><span class="material-symbols-outlined">search</span></button>
+<a class="btn btn-primary-custom d-none d-md-inline-block" href="#">Explore</a>
+<a class="btn btn-primary-custom d-md-inline-block" href="#">Login / Cadastrar</a></div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow-1">
+<!-- Hero Section -->
+<section class="hero-section container-lg px-5">
+<div class="row align-items-center gy-5">
+<div class="col-md-7">
+<h1 class="hero-title">A América Latina, contada por suas referências.</h1>
+<p class="hero-text">Explore músicas, filmes, livros, artistas, lugares e histórias que ajudam a construir a cultura latino-americana.</p>
+<div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+<a class="btn btn-primary-custom text-center py-3 px-5" href="#explore">Explorar a latina</a>
+<a class="btn btn-outline-custom text-center py-3 px-5" href="#featured">Ver destaques</a>
+</div>
+</div>
+<div class="col-md-5 d-flex justify-content-md-end">
+<div class="hero-image-container w-100">
+<img alt="Latin American Architecture Detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAE7ATuK3QpoK6ERpUBc2vAkZikzB3qVHGz-ponT0xb6GmszCt7CxTwH-oCkrvPbcPBGcwqOtoK1uUM9ptfeABjOGawsxaD3cEMY2mKcxGogmdouNXlQJJz5lCj3UgpogQ6qqva4EtUbrGVdxo_9HgYm9NOSnChrWsIJRLWZT7ynuReS0YXpxDp1-7eJ8uZBjejm6q6d3jJ9oa9eodrchfl_H2riIoXJHgVwJzcfF9bNAXqOXkvLRg">
+</div>
+</div>
+</div>
+</section>
+<!-- Explore by Category -->
+<section class="explore-section container-lg px-5" id="explore">
+<h2 class="section-title">Explore por categoria</h2>
+<div class="row g-4">
+<!-- Music -->
+<div class="col-md-6 col-lg-4">
+<a class="category-card" href="#">
+<div class="decor" style="background-color: var(--terracotta);"></div>
+<span class="category-label" style="color: var(--terracotta);">Som &amp; Ritmo</span>
+<h3 class="category-title font-headline">Música</h3>
+<p class="category-text">A trilha sonora de um continente, da bossa nova ao tango, do reggaeton ao tropicalismo.</p>
+</a>
+</div>
+<!-- Cinema -->
+<div class="col-md-6 col-lg-4">
+<a class="category-card" href="#">
+<div class="decor" style="background-color: var(--petrol-blue);"></div>
+<span class="category-label" style="color: var(--petrol-blue);">Luz &amp; Sombra</span>
+<h3 class="category-title font-headline">Cinema</h3>
+<p class="category-text">Narrativas visuais que capturam a realidade mágica e crua das ruas latino-americanas.</p>
+</a>
+</div>
+<!-- Literature -->
+<div class="col-md-6 col-lg-4">
+<a class="category-card" href="#">
+<div class="decor" style="background-color: var(--deep-green);"></div>
+<span class="category-label" style="color: var(--deep-green);">Palavra &amp; Memória</span>
+<h3 class="category-title font-headline">Literatura</h3>
+<p class="category-text">Obras que redefiniram o realismo mágico e documentaram as veias abertas do continente.</p>
+</a>
+</div>
+</div>
+</section>
+<!-- Featured Editorial Grid -->
+<section class="featured-section" id="featured">
+<div class="container-lg px-5">
+<div class="d-flex justify-content-between align-items-end mb-5">
+<h2 class="section-title m-0">Em destaque</h2>
+<a class="text-dark fw-semibold text-decoration-none d-none d-sm-block text-decoration-underline" href="#" style="text-underline-offset: 4px;">Ver arquivo completo</a>
+</div>
+<div class="row g-5 align-items-start">
+<!-- Featured Item 1 -->
+<div class="col-md-8">
+<article class="featured-article" style="cursor: pointer;">
+<div class="featured-img-container featured-img-large">
+<img alt="Clube da Esquina" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfoJrNCzc6LD4sik65_Uig9wffSXBTdPbmL2RhuG1e27EYqO2mKeymaFYBvCcijGjv5l6SfQpiIuoT_qRIuqZQbxJi0_fbaTLvIk-jb0E_3BzwHA0_ZbAuoRvOG93MDzu8o29rG7alqiWdBCd3ku8pO9xWW04s4WLvhFBX6PVHTcjgSUlXOPFQTIhFwzaXOr4kG8mVFC7II2vN-E3YLxZ6h7p6nvmAITR_FJVcMkLb_djcm5hFz3nN">
+</div>
+<div class="d-flex align-items-center gap-3 mb-3">
+<span class="tag-outline" style="color: var(--terracotta); border-color: var(--terracotta);">Música</span>
+<span style="font-size: 0.75rem; color: var(--secondary);" class="">Brasil, 1972</span>
+</div>
+<h3 class="featured-title title-terracotta font-headline mb-3" style="font-size: 2.25rem;">Clube da Esquina</h3>
+<p class="text-secondary" style="font-size: 1rem; max-width: 42rem;">A obra-prima de Milton Nascimento e Lô Borges que uniu a bossa nova, o rock e a música folclórica mineira em um som universal e atemporal.</p>
+</article>
+</div>
+<!-- Featured Item 2 -->
+<div class="col-md-4">
+<article class="featured-article" style="cursor: pointer;">
+<div class="featured-img-container featured-img-small">
+<img alt="Macario" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIb64RFyxnhGxUjW4KmV942_UGhGquNi94lPmnC3sSxrXdNR2KqCDzg-57KyKh4i2rmGw-89qBgL3aeLbqIPR4DHs6fgYwNP-CYuwVAsGdpAxdPcWO4vabmPj9SlAo1op7IYYDeFQH-9Vf6hc1mYCDvoOx6d8BPM2LMbdH3dm53TtxtF1luxgkRnt0G-JfFFfPKz3eqTsmp36rkANq2vx4rrK0jw3RG0liy80GP3KGr7QxpgLejj1A">
+</div>
+<div class="d-flex align-items-center gap-3 mb-3">
+<span class="tag-outline" style="color: var(--petrol-blue); border-color: var(--petrol-blue);">Cinema</span>
+<span style="font-size: 0.75rem; color: var(--secondary);" class="">México, 1960</span>
+</div>
+<h3 class="featured-title title-petrol font-headline mb-2" style="font-size: 1.5rem;">Macario</h3>
+<p class="text-secondary" style="font-size: 1rem;">O primeiro filme mexicano indicado ao Oscar, uma fábula visualmente deslumbrante sobre a morte e a pobreza.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- Da América Latina -->
+<section class="origins-section container-lg px-5">
+<h2 class="origins-label">Origens</h2>
+<p class="origins-text font-headline">
+            Brasil <span class="origins-dot">·</span> 
+            Argentina <span class="origins-dot">·</span> 
+            México <span class="origins-dot">·</span> 
+            Colômbia <span class="origins-dot">·</span> 
+            Chile <span class="origins-dot">·</span> 
+            Peru <span class="origins-dot">·</span> 
+            Uruguai <span class="origins-dot">·</span> 
+            Bolívia <span class="origins-dot">·</span> 
+            Paraguai <span class="origins-dot">·</span> 
+            Equador <span class="origins-dot">·</span> 
+            Venezuela <span class="origins-dot">·</span> 
+            Cuba <span class="origins-dot">·</span> 
+            República Dominicana <span class="origins-dot">·</span> 
+            Costa Rica
+        </p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="footer-custom mt-auto">
+<div class="container-lg px-5">
+<div class="row align-items-md-center gy-4">
+<div class="col-md-6">
+<span class="footer-brand">LATINA</span>
+<p class="footer-text m-0">© 2024 LATINA. An archival lens on Latin American heritage.</p>
+</div>
+<div class="col-md-6 d-flex flex-wrap justify-content-md-end gap-2">
+<a class="footer-link" href="#">Archives</a>
+<a class="footer-link" href="#">About</a>
+<a class="footer-link" href="#">Submit</a>
+<a class="footer-link" href="#">Legal</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Bootstrap JS Bundle -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</body></html>

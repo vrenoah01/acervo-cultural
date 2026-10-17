@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>latina — Cadastrar Obra</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #faf9f5;
+      --surface-lowest: #ffffff;
+      --text-main: #171717;
+      --text-muted: #666666;
+      --text-dim: #999999;
+      --border-subtle: #e5e5e0;
+      --border-dark: #171717;
+      --terracotta: #c85a32;
+      --footer-bg: #f2f1ec;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Top Nav */
+    .site-nav {
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.04em;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .brand-logo:hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-cta:hover {
+      color: var(--terracotta);
+    }
+
+    /* Form Card Container */
+    .form-wrapper {
+      flex: 1;
+      padding-top: 3.5rem;
+      padding-bottom: 5rem;
+    }
+
+    .form-card {
+      background: var(--bg-color);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .header-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.25rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text-main);
+    }
+
+    .header-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-top: 0.75rem;
+    }
+
+    .badge-free {
+      display: inline-block;
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.85rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Form Elements matching Latina register style */
+    .form-group-custom {
+      margin-bottom: 2rem;
+    }
+
+    .label-custom {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .input-custom, .select-custom, .textarea-custom {
+      width: 100%;
+      background-color: var(--surface-lowest);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0;
+      padding: 0.85rem 1rem;
+      font-size: 0.925rem;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .input-custom::placeholder, .textarea-custom::placeholder {
+      color: var(--text-dim);
+      font-weight: 300;
+    }
+
+    .input-custom:focus, .select-custom:focus, .textarea-custom:focus {
+      background-color: var(--surface-lowest);
+      border-color: var(--border-dark);
+      box-shadow: none;
+      color: var(--text-main);
+    }
+
+    .select-custom {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23171717' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.25rem center;
+      padding-right: 2.75rem;
+      cursor: pointer;
+    }
+
+    .textarea-custom {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Upload Area */
+    .upload-zone {
+      border: 1px dashed #cfcfc8;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 2.75rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .upload-zone:hover {
+      border-color: var(--border-dark);
+      background-color: var(--surface-lowest);
+    }
+
+    .upload-icon {
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .upload-main-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .upload-subtext {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Action Button */
+    .btn-submit-obra {
+      display: block;
+      width: 100%;
+      background-color: var(--border-dark);
+      color: #ffffff;
+      border: 1px solid var(--border-dark);
+      border-radius: 0;
+      padding: 1.05rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
+      cursor: pointer;
+      margin-top: 2.5rem;
+    }
+
+    .btn-submit-obra:hover {
+      background-color: #333333;
+      border-color: #333333;
+      color: #ffffff;
+    }
+
+    .footnote-info {
+      text-align: center;
+      margin-top: 1.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footnote-info a {
+      color: var(--text-main);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .footnote-info a:hover {
+      color: var(--terracotta);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--footer-bg);
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .site-footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-footer a:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header-title {
+        font-size: 2.4rem;
+      }
+      .form-wrapper {
+        padding-top: 2.5rem;
+        padding-bottom: 3.5rem;
+      }
+      .site-nav .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-nav">
+    <div class="container-fluid px-4 px-md-5 d-flex justify-content-between align-items-center">
+      <a href="#" class="brand-logo">LATINA</a>
+
+      <nav class="nav-links d-none d-md-flex gap-4">
+        <a href="#" class="">Music</a>
+        <a href="#" class="">Films</a>
+        <a href="#" class="">Books</a>
+        <a href="#" class="">Artists</a>
+        <a href="#" class="">Places</a>
+        <a href="#" class="">Culture</a>
+      </nav>
+
+      <div class="d-flex align-items-center gap-4">
+        <a href="#" class="nav-cta">Explore</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="form-wrapper flex-grow-1">
+    <div class="container px-3 px-md-4">
+      <div class="form-card">
+        
+        <!-- Header / Intro -->
+        <div class="text-center mb-5">
+          <div class="badge-free">Divulgação Gratuita</div>
+          <h1 class="header-title">Cadastrar Obra</h1>
+          <p class="header-subtitle">Compartilhe sua criação com o acervo cultural e amplie o alcance da sua arte para o continente.</p>
+        </div>
+
+        <!-- Form -->
+        <form action="#" method="POST" onsubmit="return false;">
+          
+          <!-- Título da Obra -->
+          <div class="form-group-custom">
+            <label class="label-custom" for="obra-title">Título da Obra</label>
+            <input type="text" id="obra-title" name="title" class="input-custom" placeholder="Ex.: Macondo em Sombras, Canto Geral, Retratos Urbanos..." required="">
+          </div>
+
+          <!-- Categoria -->
+          <div class="form-group-custom">
+            <label class="label-custom" for="obra-category">Categoria</label>
+            <select id="obra-category" name="category" class="select-custom" required="">
+              <option value="" disabled="" selected="">Selecione uma categoria</option>
+              <option value="livro">Livro / Literatura</option>
+              <option value="filme">Filme / Cinema</option>
+              <option value="musica">Música / Paisagem Sonora</option>
+              <option value="lugar">Lugar / Arquitetura &amp; Patrimônio</option>
+              <option value="artes-visuais">Artes Visuais &amp; Fotografia</option>
+              <option value="poema">Poesia &amp; Ensaio</option>
+              <option value="outro">Outro formato cultural</option>
+            </select>
+          </div>
+
+          <!-- Descrição -->
+          <div class="form-group-custom">
+            <label class="label-custom" for="obra-description">Descrição da Obra</label>
+            <textarea id="obra-description" name="description" class="textarea-custom" placeholder="Descreva o contexto, a pesquisa, influências e a inspiração por trás da sua obra..." rows="4" required=""></textarea>
+          </div>
+
+          <!-- Imagem de Capa -->
+          <div class="form-group-custom">
+            <label class="label-custom">Imagem de Capa</label>
+            <div class="upload-zone" onclick="document.getElementById('obra-file').click();">
+              <input type="file" id="obra-file" name="cover" accept="image/png, image/jpeg" style="display: none;">
+              <div class="upload-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+              </div>
+              <div class="upload-main-text">Clique para enviar a imagem de capa</div>
+              <p class="upload-subtext">Formatos suportados: PNG ou JPEG (Máx. 5MB). Proporção recomendada 3:2 ou 4:3.</p>
+            </div>
+          </div>
+
+          <!-- Botão Submeter -->
+          <button type="submit" class="btn-submit-obra">
+            Publicar Obra no Acervo
+          </button>
+
+          <p class="footnote-info">
+            Ao submeter, você concorda com as <a href="#" class="">Diretrizes Curatoriais</a> da Latina.
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer mt-auto">
+    <div class="container-fluid px-4 px-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <span class="brand-logo" style="font-size: 1.25rem;">LATINA</span>
+      
+      <div class="d-flex gap-4">
+        <a href="#" class="">Archives</a>
+        <a href="#" class="">About</a>
+        <a href="#" class="">Submit</a>
+        <a href="#" class="">Legal</a>
+      </div>
+
+      <div>
+        <span class="">© 2024 LATINA. An archival lens on Latin American heritage.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+ <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body></html>
