@@ -72,13 +72,13 @@ API pública gratuita com mais de 76 mil obras com título, autor, ano de public
 
 ## 🏛️ Telas do Projeto Latina: Arquivo Cultural Minimalista (Exportadas via Stitch MCP)
 
-As telas desenvolvidas utilizando o **Google Stitch (IA)** e implementadas com **Bootstrap 5 (local via NPM)** estão organizadas nas seguintes pastas:
+As telas desenvolvidas utilizando o **Google Stitch (IA)** e implementadas com **Bootstrap 5 (local via NPM)** estão organizadas dentro da pasta [`pages/`](./pages/):
 
-1. **[`01_arquivo_cultural/index.html`](./01_arquivo_cultural/index.html)**: Layout principal com Hero, catálogo de obras e grid de destaques.
-2. **[`02_cadastro_usuario/index.html`](./02_cadastro_usuario/index.html)**: Formulário de registro de novos membros/usuários.
-3. **[`03_area_membros_sem_obras/index.html`](./03_area_membros_sem_obras/index.html)**: Painel da área de membros em estado inicial (*empty state*).
-4. **[`04_cadastro_obra/index.html`](./04_cadastro_obra/index.html)**: Formulário de submissão e cadastro de novas obras culturais para o acervo.
-5. **[`05_obras_cadastradas/index.html`](./05_obras_cadastradas/index.html)**: Área de membros com listagem das obras cadastradas (grid de cards e Design System).
+1. **[`pages/01_arquivo_cultural/index.html`](./pages/01_arquivo_cultural/index.html)**: Layout principal com Hero, catálogo de obras e grid de destaques.
+2. **[`pages/02_cadastro_usuario/index.html`](./pages/02_cadastro_usuario/index.html)**: Formulário de registro de novos membros/usuários.
+3. **[`pages/03_area_membros_sem_obras/index.html`](./pages/03_area_membros_sem_obras/index.html)**: Painel da área de membros em estado inicial (*empty state*).
+4. **[`pages/04_cadastro_obra/index.html`](./pages/04_cadastro_obra/index.html)**: Formulário de submissão e cadastro de novas obras culturais para o acervo.
+5. **[`pages/05_obras_cadastradas/index.html`](./pages/05_obras_cadastradas/index.html)**: Área de membros com listagem das obras cadastradas (grid de cards e Design System).
 
 ### Como Executar Localmente
 ```bash
