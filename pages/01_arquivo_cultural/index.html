@@ -3,7 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>LATINA - A América Latina, contada por suas referências</title>
 <!-- Bootstrap CSS -->
-<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -54,7 +54,7 @@
         .navbar-brand {
             font-family: var(--font-headline);
             font-weight: 700;
-            font-size: 2.25rem;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
             color: var(--primary);
             letter-spacing: -0.02em;
         }
@@ -67,50 +67,55 @@
             color: var(--terracotta);
         }
         .btn-primary-custom {
-            background-color: var(--primary);
-            color: var(--on-primary);
+            background-color: #000000;
+            color: #ffffff;
             font-weight: 600;
             font-size: 0.875rem;
             letter-spacing: 0.02em;
             border-radius: 0;
             padding: 0.5rem 1.5rem;
-            border: 1px solid var(--primary);
+            border: 1px solid #000000;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         .btn-primary-custom:hover {
-            opacity: 0.9;
-            color: var(--on-primary);
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #000000;
         }
         .btn-outline-custom {
             background-color: transparent;
-            color: var(--primary);
+            color: #000000;
             font-weight: 600;
             font-size: 0.875rem;
             letter-spacing: 0.02em;
             border-radius: 0;
             padding: 0.5rem 1.5rem;
-            border: 1px solid var(--primary);
+            border: 1px solid #000000;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         .btn-outline-custom:hover {
-            background-color: var(--primary);
-            color: var(--on-primary);
+            background-color: #000000;
+            color: #ffffff;
+            border-color: #000000;
         }
 
         /* Hero */
         .hero-section {
-            padding: 6rem 0;
+            padding: clamp(3rem, 6vw, 6rem) 0;
         }
         .hero-title {
-            font-size: 3rem;
+            font-size: clamp(2.25rem, 5vw + 0.5rem, 4rem);
             font-weight: 700;
             line-height: 1.1;
             letter-spacing: -0.02em;
             color: var(--primary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .hero-text {
-            font-size: 1.125rem;
+            font-size: clamp(1rem, 2vw, 1.125rem);
             color: var(--secondary);
             margin-bottom: 2rem;
+            max-width: 40rem;
         }
         .hero-image-container {
             border: 1px solid var(--outline-variant);
@@ -118,11 +123,19 @@
             background-color: var(--paper-darker);
             aspect-ratio: 3/4;
             max-width: 350px;
-            margin-left: auto;
+            width: 100%;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .hero-image-container {
+                margin-left: auto;
+                margin-right: 0;
+            }
         }
         .hero-image-container img {
             width: 100%;
             height: 100%;
+            max-width: 100%;
             object-fit: cover;
             filter: grayscale(100%);
             opacity: 0.9;
@@ -131,14 +144,14 @@
 
         /* Explore */
         .explore-section {
-            padding: 6rem 0;
+            padding: clamp(3rem, 6vw, 6rem) 0;
             border-top: 1px solid var(--outline-variant);
         }
         .section-title {
-            font-size: 2.25rem;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         .category-card {
             border: 1px solid var(--outline-variant);
@@ -190,7 +203,7 @@
         /* Featured */
         .featured-section {
             background-color: var(--paper-darker);
-            padding: 6rem 0;
+            padding: clamp(3rem, 6vw, 6rem) 0;
         }
         .featured-img-container {
             border: 1px solid var(--outline-variant);
@@ -206,6 +219,7 @@
         .featured-img-container img {
             width: 100%;
             height: 100%;
+            max-width: 100%;
             object-fit: cover;
             transition: transform 0.7s ease-out;
         }
@@ -227,7 +241,7 @@
 
         /* Origins */
         .origins-section {
-            padding: 8rem 0;
+            padding: clamp(3.5rem, 7vw, 8rem) 0;
             text-align: center;
         }
         .origins-label {
@@ -236,10 +250,10 @@
             letter-spacing: 0.02em;
             color: var(--secondary);
             font-weight: 600;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         .origins-text {
-            font-size: 2.25rem;
+            font-size: clamp(1.35rem, 3.5vw + 0.25rem, 2.25rem);
             line-height: 1.6;
             color: var(--primary);
             opacity: 0.8;
@@ -255,7 +269,7 @@
         .footer-custom {
             background-color: var(--paper-darker);
             border-top: 1px solid var(--outline-variant);
-            padding: 4rem 0;
+            padding: clamp(2.5rem, 5vw, 4rem) 0;
             margin-top: auto;
         }
         .footer-brand {
@@ -263,7 +277,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             display: block;
         }
         .footer-text {
@@ -274,36 +288,33 @@
             color: var(--secondary);
             font-size: 0.875rem;
             text-decoration: none;
-            margin-left: 1.5rem;
+            transition: color 0.2s;
         }
         .footer-link:hover {
             text-decoration: underline;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-title { font-size: 4rem; }
+            color: var(--primary);
         }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <!-- TopNavBar -->
 <nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
-<div class="container-lg px-5">
+<div class="container-lg px-3 px-sm-4 px-lg-5">
 <a class="navbar-brand m-0 p-0" href="#">LATINA</a>
 <button aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0 shadow-none text-dark" data-bs-target="#navbarContent" data-bs-toggle="collapse" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
 <div class="collapse navbar-collapse" id="navbarContent">
 <ul class="navbar-nav mx-auto mb-2 mb-md-0 gap-3">
-<li class="nav-item"><a class="nav-link" href="#">Music</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Films</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Books</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Artists</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Places</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Culture</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Música</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Filmes</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Livros</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Artistas</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Lugares</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Cultura</a></li>
 </ul>
 <div class="d-flex align-items-center gap-3 flex-wrap">
-<button class="btn btn-link p-0 text-dark text-decoration-none shadow-none"><span class="material-symbols-outlined">search</span></button>
+<button class="btn btn-link p-0 text-dark text-decoration-none shadow-none"> <span class="material-symbols-outlined">search</span> </button>
 <a class="btn btn-primary-custom d-none d-md-inline-block" href="#">Explore</a>
 <a class="btn btn-primary-custom d-md-inline-block" href="#">Login / Cadastrar</a></div>
 </div>
@@ -312,14 +323,14 @@
 <!-- Main Content -->
 <main class="flex-grow-1">
 <!-- Hero Section -->
-<section class="hero-section container-lg px-5">
+<section class="hero-section container-lg px-3 px-sm-4 px-lg-5">
 <div class="row align-items-center gy-5">
 <div class="col-md-7">
 <h1 class="hero-title">A América Latina, contada por suas referências.</h1>
 <p class="hero-text">Explore músicas, filmes, livros, artistas, lugares e histórias que ajudam a construir a cultura latino-americana.</p>
 <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-<a class="btn btn-primary-custom text-center py-3 px-5" href="#explore">Explorar a latina</a>
-<a class="btn btn-outline-custom text-center py-3 px-5" href="#featured">Ver destaques</a>
+<a class="btn btn-primary-custom text-center py-3 px-4 px-md-5" href="#explore">Explorar a latina</a>
+<a class="btn btn-outline-custom text-center py-3 px-4 px-md-5" href="#featured">Ver destaques</a>
 </div>
 </div>
 <div class="col-md-5 d-flex justify-content-md-end">
@@ -330,7 +341,7 @@
 </div>
 </section>
 <!-- Explore by Category -->
-<section class="explore-section container-lg px-5" id="explore">
+<section class="explore-section container-lg px-3 px-sm-4 px-lg-5" id="explore">
 <h2 class="section-title">Explore por categoria</h2>
 <div class="row g-4">
 <!-- Music -->
@@ -364,7 +375,7 @@
 </section>
 <!-- Featured Editorial Grid -->
 <section class="featured-section" id="featured">
-<div class="container-lg px-5">
+<div class="container-lg px-3 px-sm-4 px-lg-5">
 <div class="d-flex justify-content-between align-items-end mb-5">
 <h2 class="section-title m-0">Em destaque</h2>
 <a class="text-dark fw-semibold text-decoration-none d-none d-sm-block text-decoration-underline" href="#" style="text-underline-offset: 4px;">Ver arquivo completo</a>
@@ -402,7 +413,7 @@
 </div>
 </section>
 <!-- Da América Latina -->
-<section class="origins-section container-lg px-5">
+<section class="origins-section container-lg px-3 px-sm-4 px-lg-5">
 <h2 class="origins-label">Origens</h2>
 <p class="origins-text font-headline">
             Brasil <span class="origins-dot">·</span> 
@@ -424,13 +435,13 @@
 </main>
 <!-- Footer -->
 <footer class="footer-custom mt-auto">
-<div class="container-lg px-5">
+<div class="container-lg px-3 px-sm-4 px-lg-5">
 <div class="row align-items-md-center gy-4">
 <div class="col-md-6">
 <span class="footer-brand">LATINA</span>
 <p class="footer-text m-0">© 2024 LATINA. An archival lens on Latin American heritage.</p>
 </div>
-<div class="col-md-6 d-flex flex-wrap justify-content-md-end gap-2">
+<div class="col-md-6 d-flex flex-wrap justify-content-md-end gap-3 gap-md-4">
 <a class="footer-link" href="#">Archives</a>
 <a class="footer-link" href="#">About</a>
 <a class="footer-link" href="#">Submit</a>
@@ -440,7 +451,7 @@
 </div>
 </footer>
 <!-- Bootstrap JS Bundle -->
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
 

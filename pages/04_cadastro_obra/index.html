@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>latina — Cadastrar Obra</title>
   <!-- Bootstrap 5 CSS -->
-  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts: Playfair Display & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -41,14 +41,14 @@
     .site-nav {
       background-color: var(--bg-color);
       border-bottom: 1px solid var(--border-subtle);
-      padding-top: 1.25rem;
-      padding-bottom: 1.25rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
 
     .brand-logo {
       font-family: 'Playfair Display', Georgia, serif;
       font-weight: 700;
-      font-size: 1.6rem;
+      font-size: clamp(1.4rem, 3.5vw, 1.6rem);
       letter-spacing: -0.04em;
       color: var(--text-main);
       text-decoration: none;
@@ -58,7 +58,7 @@
       color: var(--text-main);
     }
 
-    .nav-links a {
+    .nav-links a, .nav-item-obra a {
       color: var(--text-main);
       text-decoration: none;
       font-size: 0.875rem;
@@ -67,7 +67,7 @@
       transition: color 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover, .nav-item-obra a:hover {
       color: var(--terracotta);
     }
 
@@ -86,19 +86,20 @@
     /* Form Card Container */
     .form-wrapper {
       flex: 1;
-      padding-top: 3.5rem;
-      padding-bottom: 5rem;
+      padding-top: clamp(2rem, 4vw, 3.5rem);
+      padding-bottom: clamp(3rem, 6vw, 5rem);
     }
 
     .form-card {
       background: var(--bg-color);
       max-width: 680px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .header-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 3.25rem;
+      font-size: clamp(2rem, 5vw + 0.5rem, 3.25rem);
       font-weight: 600;
       letter-spacing: -0.03em;
       line-height: 1.1;
@@ -107,10 +108,13 @@
 
     .header-subtitle {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 2vw, 1rem);
       font-weight: 400;
       letter-spacing: -0.01em;
       margin-top: 0.75rem;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .badge-free {
@@ -214,24 +218,24 @@
     .btn-submit-obra {
       display: block;
       width: 100%;
-      background-color: var(--border-dark);
+      background-color: #000000;
       color: #ffffff;
-      border: 1px solid var(--border-dark);
+      border: 1px solid #000000;
       border-radius: 0;
       padding: 1.05rem;
       font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      transition: background-color 0.2s ease, opacity 0.2s ease;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
       cursor: pointer;
       margin-top: 2.5rem;
     }
 
     .btn-submit-obra:hover {
-      background-color: #333333;
-      border-color: #333333;
-      color: #ffffff;
+      background-color: #ffffff;
+      border-color: #000000;
+      color: #000000;
     }
 
     .footnote-info {
@@ -274,41 +278,35 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .header-title {
-        font-size: 2.4rem;
-      }
-      .form-wrapper {
-        padding-top: 2.5rem;
-        padding-bottom: 3.5rem;
-      }
-      .site-nav .nav-links {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
   <!-- Header / Navigation Bar -->
-  <header class="site-nav">
-    <div class="container-fluid px-4 px-md-5 d-flex justify-content-between align-items-center">
+  <nav class="navbar navbar-expand-md site-nav sticky-top">
+    <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
       <a href="#" class="brand-logo">LATINA</a>
 
-      <nav class="nav-links d-none d-md-flex gap-4">
-        <a href="#" class="">Music</a>
-        <a href="#" class="">Films</a>
-        <a href="#" class="">Books</a>
-        <a href="#" class="">Artists</a>
-        <a href="#" class="">Places</a>
-        <a href="#" class="">Culture</a>
-      </nav>
+      <button aria-controls="navObras" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler border-0 shadow-none text-dark d-md-none" data-bs-target="#navObras" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="d-flex align-items-center gap-4">
-        <a href="#" class="nav-cta">Explore</a>
+      <div class="collapse navbar-collapse justify-content-between" id="navObras">
+        <div class="navbar-nav mx-auto d-flex flex-column flex-md-row gap-2 gap-md-4 py-3 py-md-0">
+          <a href="#" class="nav-link p-0 text-dark">Music</a>
+          <a href="#" class="nav-link p-0 text-dark">Films</a>
+          <a href="#" class="nav-link p-0 text-dark">Books</a>
+          <a href="#" class="nav-link p-0 text-dark">Artists</a>
+          <a href="#" class="nav-link p-0 text-dark">Places</a>
+          <a href="#" class="nav-link p-0 text-dark">Culture</a>
+        </div>
+
+        <div class="d-flex align-items-center pt-2 pt-md-0">
+          <a href="#" class="nav-cta">Explore</a>
+        </div>
       </div>
     </div>
-  </header>
+  </nav>
 
   <!-- Main Content Area -->
   <main class="form-wrapper flex-grow-1">
@@ -385,10 +383,10 @@
 
   <!-- Footer -->
   <footer class="site-footer mt-auto">
-    <div class="container-fluid px-4 px-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div class="container-fluid px-3 px-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center text-md-start">
       <span class="brand-logo" style="font-size: 1.25rem;">LATINA</span>
       
-      <div class="d-flex gap-4">
+      <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
         <a href="#" class="">Archives</a>
         <a href="#" class="">About</a>
         <a href="#" class="">Submit</a>
@@ -402,8 +400,6 @@
   </footer>
 
   <!-- Bootstrap 5 JS Bundle -->
- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-</body></html>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
