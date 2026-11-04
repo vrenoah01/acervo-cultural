@@ -12,83 +12,14 @@
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --surface-color: #faf9f5;
-            --on-surface-color: #1a1c1a;
-            --secondary-color: #5f5e5b;
-            --terracotta-color: #C85C3B;
-            --outline-color: #747878;
-            --outline-variant-color: #c4c7c7;
-            --paper-darker: #EFEEE9;
-        }
-
-        body {
-            background-color: var(--surface-color);
-            color: var(--on-surface-color);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            line-height: 1.5;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .font-headline {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Custom Input Styles to match Editorial look */
-        .editorial-input {
-            border: none;
-            border-bottom: 1px solid #1a1c1a;
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0.5rem 0;
-            transition: border-bottom-width 0.2s ease, border-color 0.2s ease;
-        }
-        .editorial-input:focus {
-            outline: none;
-            box-shadow: none;
-            border-bottom: 2px solid var(--terracotta-color);
-            border-color: var(--terracotta-color);
-        }
-        
-        /* Custom Radio/Chip Styles */
-        .type-radio:checked + .type-label {
-            background-color: #f4f4f0;
-            border-color: var(--terracotta-color);
-            color: var(--terracotta-color);
-        }
-
-        .max-w-custom {
-            max-width: 1280px;
-        }
-
-        .footer-link:hover {
-            text-decoration: underline !important;
-            text-underline-offset: 4px;
-        }
-
-        button[type="submit"] {
-            background-color: #000000;
-            color: #ffffff;
-            border-color: #000000;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border-color: #000000 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body class="min-vh-100 d-flex flex-column">
 
 <!-- TopNavBar -->
 <header class="w-100 sticky-top z-3 bg-surface border-bottom" style="background-color: var(--surface-color); border-color: var(--outline-variant-color) !important;">
     <div class="d-flex justify-content-between align-items-center w-100 px-3 px-md-5 py-3 py-md-4 max-w-custom mx-auto">
-        <a class="font-headline fw-bold text-dark text-decoration-none" style="font-size: clamp(1.75rem, 4vw, 2.25rem); letter-spacing: -0.05em; color: var(--on-surface-color);" href="/">
+        <a class="font-headline fw-bold text-dark text-decoration-none" style="font-size: clamp(1.75rem, 4vw, 2.25rem); letter-spacing: -0.05em; color: var(--on-surface-color);" href=>
             LATINA
         </a>
     </div>
@@ -98,55 +29,50 @@
 <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3 px-md-5 w-100 max-w-custom mx-auto">
     <div class="w-100" style="max-width: 480px;">
         <div class="text-center mb-4 mb-md-5">
-            <h1 class="font-headline fw-semibold text-dark mb-2 mb-md-3 mt-2 mt-md-0" style="font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.2; letter-spacing: -0.02em;">Join the Archive</h1>
-            <p class="text-secondary mb-0" style="color: var(--secondary-color); font-size: clamp(0.95rem, 2vw, 1.125rem); line-height: 1.5;">A curated lens on Latin American heritage.</p>
+            <h1 class="font-headline fw-semibold text-dark mb-2 mb-md-3 mt-2 mt-md-0" style="font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.2; letter-spacing: -0.02em;">Junte-se ao projeto</h1>
+            <p class="text-secondary mb-0" style="color: var(--secondary-color); font-size: clamp(0.95rem, 2vw, 1.125rem); line-height: 1.5;">Um curadoria sobre o patrimônio latino-americano</p>
         </div>
         
         <form class="w-100 d-flex flex-column gap-4">
             <!-- Account Type Selector (Chips) -->
             <fieldset class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center mb-2 w-100 border-0 p-0 m-0">
-                <legend class="visually-hidden">Account Type</legend>
+                <legend class="visually-hidden">Tipo de conta</legend>
                 <div class="position-relative w-100">
                     <input checked class="type-radio position-absolute opacity-0 pointer-events-none" id="type-common" name="account_type" type="radio" value="comum">
                     <label class="type-label d-block px-3 py-2 border text-secondary fw-semibold text-center w-100" style="border-color: var(--outline-color); font-size: 0.875rem; min-width: 130px; cursor: pointer; transition: color 0.2s, border-color 0.2s, background-color 0.2s;" for="type-common">
-                        Cadastro Comum
+                        Faça seu cadastro aqui!
                     </label>
                 </div>
-                <div class="position-relative w-100">
-                    <input class="type-radio position-absolute opacity-0 pointer-events-none" id="type-artist" name="account_type" type="radio" value="artista">
-                    <label class="type-label d-block px-3 py-2 border text-secondary fw-semibold text-center w-100" style="border-color: var(--outline-color); font-size: 0.875rem; min-width: 130px; cursor: pointer; transition: color 0.2s, border-color 0.2s, background-color 0.2s;" for="type-artist">
-                        Cadastro de Artista
-                    </label>
-                </div>
+                
             </fieldset>
 
             <!-- Username Field -->
             <div class="d-flex flex-column gap-1">
-                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="username">Username</label>
+                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="username">Nome de Usuário</label>
                 <input class="editorial-input w-100 text-dark" id="username" name="username" required type="text">
             </div>
 
             <!-- Email Field -->
             <div class="d-flex flex-column gap-1">
-                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="email">Email Address</label>
+                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="email">Endereço de Email</label>
                 <input class="editorial-input w-100 text-dark" id="email" name="email" required type="email">
             </div>
 
             <!-- Date of Birth Field -->
             <div class="d-flex flex-column gap-1">
-                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="dob">Date of Birth</label>
+                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="dob">Data de Nascimento</label>
                 <input class="editorial-input w-100 text-dark" id="dob" name="dob" required type="date">
             </div>
 
             <!-- Password Field -->
             <div class="d-flex flex-column gap-1 mb-2">
-                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="password">Password</label>
+                <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="password">Senha</label>
                 <input class="editorial-input w-100 text-dark" id="password" name="password" required type="password">
             </div>
 
             <!-- Submit Button -->
             <button class="w-100 bg-dark text-white fw-semibold py-3 mt-2 border border-dark text-uppercase" style="letter-spacing: 0.05em; font-size: 0.875rem; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; cursor: pointer;" type="submit">
-                Register
+                Cadastrar
             </button>
 
             <div class="text-center mt-3">
@@ -165,9 +91,9 @@
             LATINA
         </div>
         <nav class="d-flex gap-4 flex-wrap" style="font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.05em;">
-            <a class="text-secondary text-decoration-none footer-link" href="/archives">Archives</a>
-            <a class="text-secondary text-decoration-none footer-link" href="/about">About</a>
-            <a class="text-secondary text-decoration-none footer-link" href="/submit">Submit</a>
+            <a class="text-secondary text-decoration-none footer-link" href="/archives">Arquivos</a>
+            <a class="text-secondary text-decoration-none footer-link" href="/about">Sobre</a>
+            <a class="text-secondary text-decoration-none footer-link" href="/submit">Enviar</a>
             <a class="text-secondary text-decoration-none footer-link" href="/legal">Legal</a>
         </nav>
         <div class="text-secondary" style="font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.05em;">

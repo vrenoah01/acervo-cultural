@@ -1,0 +1,68 @@
+:root {
+    --surface-color: #faf9f5;
+    --on-surface-color: #1a1c1a;
+    --secondary-color: #5f5e5b;
+    --terracotta-color: #C85C3B;
+    --outline-color: #747878;
+    --outline-variant-color: #c4c7c7;
+    --paper-darker: #EFEEE9;
+}
+
+body {
+    background-color: var(--surface-color);
+    color: var(--on-surface-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+.font-headline {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom Input Styles to match Editorial look */
+.editorial-input {
+    border: none;
+    border-bottom: 1px solid #1a1c1a;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0.5rem 0;
+    transition: border-bottom-width 0.2s ease, border-color 0.2s ease;
+}
+.editorial-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid var(--terracotta-color);
+    border-color: var(--terracotta-color);
+}
+
+/* Custom Radio/Chip Styles */
+.type-radio:checked + .type-label {
+    background-color: #f4f4f0;
+    border-color: var(--terracotta-color);
+    color: var(--terracotta-color);
+}
+
+.max-w-custom {
+    max-width: 1280px;
+}
+
+.footer-link:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+}
+
+button[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LATINA — Cadastrar Obra</title>
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts & Icons: Playfair Display, Inter & Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="04_cadastro_obra.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- TopNavBar -->
+  <nav class="navbar navbar-expand-md navbar-custom site-nav sticky-top py-3">
+    <div class="container-lg px-3 px-sm-4 px-lg-5">
+      <a class="navbar-brand brand-logo m-0 p-0" href="../01_arquivo_cultural/index.html">LATINA</a>
+
+      <button aria-controls="navObras" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler border-0 shadow-none text-dark" data-bs-target="#navObras" data-bs-toggle="collapse" type="button">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navObras">
+        <ul class="navbar-nav mx-auto mb-2 mb-md-0 gap-3 py-3 py-md-0">
+          <li class="nav-item"><a class="nav-link" href="#">Música</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Filmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Livros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Artistas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Lugares</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cultura</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 flex-wrap pt-2 pt-md-0">
+          <a class="btn btn-primary-custom" href="../05_obras_cadastradas/index.html">Explore</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="form-wrapper flex-grow-1">
+    <div class="container-lg px-3 px-sm-4 px-lg-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="form-card">
+
+            <!-- Header / Intro -->
+            <div class="text-center mb-5">
+              <span class="badge-free">Divulgação Gratuita</span>
+              <h1 class="header-title font-headline">Cadastrar Obra</h1>
+              <p class="header-subtitle mb-0">Compartilhe sua criação com o acervo cultural e amplie o alcance da sua arte para o continente.</p>
+            </div>
+
+            <!-- Form -->
+            <form action="#" method="POST" onsubmit="return false;" class="d-flex flex-column gap-4">
+
+              <!-- Título da Obra -->
+              <div class="form-group-custom">
+                <label class="form-label label-custom" for="obra-title">Título da Obra</label>
+                <input type="text" id="obra-title" name="title" class="form-control input-custom rounded-0" placeholder="Ex.: Macondo em Sombras, Canto Geral, Retratos Urbanos..." required>
+              </div>
+
+              <!-- Categoria -->
+              <div class="form-group-custom">
+                <label class="form-label label-custom" for="obra-category">Categoria</label>
+                <select id="obra-category" name="category" class="form-select select-custom rounded-0" required>
+                  <option value="" disabled selected>Selecione uma categoria</option>
+                  <option value="livro">Livro / Literatura</option>
+                  <option value="filme">Filme / Cinema</option>
+                  <option value="musica">Música / Paisagem Sonora</option>
+                  <option value="lugar">Lugar / Arquitetura &amp; Patrimônio</option>
+                  <option value="artes-visuais">Artes Visuais &amp; Fotografia</option>
+                  <option value="poema">Poesia &amp; Ensaio</option>
+                  <option value="outro">Outro formato cultural</option>
+                </select>
+              </div>
+
+              <!-- Descrição -->
+              <div class="form-group-custom">
+                <label class="form-label label-custom" for="obra-description">Descrição da Obra</label>
+                <textarea id="obra-description" name="description" class="form-control textarea-custom rounded-0" placeholder="Descreva o contexto, a pesquisa, influências e a inspiração por trás da sua obra..." rows="4" required></textarea>
+              </div>
+
+              <!-- Imagem de Capa -->
+              <div class="form-group-custom">
+                <label class="form-label label-custom" for="obra-file">Imagem de Capa</label>
+                <div class="upload-zone d-flex flex-column align-items-center justify-content-center" onclick="document.getElementById('obra-file').click();">
+                  <input type="file" id="obra-file" name="cover" accept="image/png, image/jpeg" class="d-none">
+                  <div class="upload-icon">
+                    <span class="material-symbols-outlined fs-2">upload</span>
+                  </div>
+                  <div class="upload-main-text">Clique para enviar a imagem de capa</div>
+                  <p class="upload-subtext">Formatos suportados: PNG ou JPEG (Máx. 5MB). Proporção recomendada 3:2 ou 4:3.</p>
+                </div>
+              </div>
+
+              <!-- Botão Submeter -->
+              <button type="submit" class="btn btn-primary-custom btn-submit-obra w-100 py-3 mt-2 text-uppercase rounded-0">
+                Publicar Obra no Acervo
+              </button>
+
+              <p class="footnote-info mb-0">
+                Ao submeter, você concorda com as <a href="#">Diretrizes Curatoriais</a> da Latina.
+              </p>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-custom site-footer mt-auto">
+    <div class="container-lg px-3 px-sm-4 px-lg-5">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-4">
+        <span class="footer-brand font-headline">LATINA</span>
+
+        <nav class="d-flex flex-wrap gap-4">
+          <a href="#" class="footer-link">Arquivos</a>
+          <a href="#" class="footer-link">Sobre</a>
+          <a href="#" class="footer-link">Submeter</a>
+          <a href="#" class="footer-link">Legal</a>
+        </nav>
+
+        <p class="footer-text m-0">© 2024 LATINA. An archival lens on Latin American heritage.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

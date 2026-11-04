@@ -1,0 +1,90 @@
+:root {
+    --surface-color: #faf9f5;
+    --on-surface-color: #1a1c1a;
+    --secondary-color: #5f5e5b;
+    --terracotta-color: #C85C3B;
+    --outline-color: #747878;
+    --outline-variant-color: #c4c7c7;
+    --paper-darker: #EFEEE9;
+    --primary-dark: #171717;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--surface-color);
+    color: var(--on-surface-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+.font-headline {
+    font-family: 'Playfair Display', serif;
+}
+
+.editorial-border {
+    border: 1px solid var(--primary-dark);
+}
+
+.editorial-border-bottom {
+    border-bottom: 1px solid var(--primary-dark);
+}
+
+.btn-editorial {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-editorial:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.nav-link-custom {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.nav-link-custom:hover {
+    color: var(--terracotta-color);
+}
+
+.footer-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+}
+
+.max-w-custom {
+    max-width: 1280px;
+}
+
+.welcome-hero {
+    padding: clamp(3rem, 6vw, 6rem) 0 clamp(2rem, 4vw, 4rem) 0;
+}
+
+.welcome-title {
+    font-size: clamp(2.25rem, 5vw + 0.5rem, 4rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.publish-empty-state {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+}
