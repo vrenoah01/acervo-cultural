@@ -26,7 +26,7 @@ API pública gratuita com mais de 76 mil obras com título, autor, ano de public
 * [ ] **ID 03 - Implementa layout responsivo** com **CSS puro**, usando Flexbox ou Grid Layout.
 * [ ] **ID 04 - Utiliza componentes prontos** de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
 * [ ] **ID 05 - Cria layout fluido** usando **unidades relativas** (vw, vh, %, em, rem) no lugar de unidades fixas (px).
-* [ ] **ID 06 - Aplica um Design System consistente** (cores, tipografia, padrões de componentes) em toda a aplicação.
+* [x] **ID 06 - Aplica um Design System consistente** (cores, tipografia, padrões de componentes) em toda a aplicação. *(Consulte o [Design System](./docs/design-system.md))*.
 * [ ] **ID 07 - Utiliza Sass** (SCSS) com ou sem framework, aplicando variáveis, mixins e funções para modularizar o código.
 * [ ] **ID 08 - Aplica tipografia responsiva** (media queries mobile first) ou **tipografia fluida** (função clamp() + unidades relativas).
 * [ ] **ID 09 – Aplica técnicas de responsividade de imagens** usando **CSS** (object-fit, containers com unidades relativas).
