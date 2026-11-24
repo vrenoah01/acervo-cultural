@@ -33,7 +33,7 @@
             <p class="text-secondary mb-0" style="color: var(--secondary-color); font-size: clamp(0.95rem, 2vw, 1.125rem); line-height: 1.5;">Um curadoria sobre o patrimônio latino-americano</p>
         </div>
         
-        <form class="w-100 d-flex flex-column gap-4">
+        <form class="w-100 d-flex flex-column gap-4" novalidate>
             <!-- Account Type Selector (Chips) -->
             <fieldset class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center mb-2 w-100 border-0 p-0 m-0">
                 <legend class="visually-hidden">Tipo de conta</legend>
@@ -49,31 +49,36 @@
             <!-- Username Field -->
             <div class="d-flex flex-column gap-1">
                 <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="username">Nome de Usuário</label>
-                <input class="editorial-input w-100 text-dark" id="username" name="username" required type="text">
+                <input class="editorial-input w-100 text-dark" id="username" minlength="3" name="username" required type="text">
+                <span class="validation-message" aria-live="polite"></span>
             </div>
 
             <!-- Email Field -->
             <div class="d-flex flex-column gap-1">
                 <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="email">Endereço de Email</label>
                 <input class="editorial-input w-100 text-dark" id="email" name="email" required type="email">
+                <span class="validation-message" aria-live="polite"></span>
             </div>
 
             <!-- Phone Field -->
             <div class="d-flex flex-column gap-1">
                 <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="phone">Telefone</label>
-                <input class="editorial-input w-100 text-dark" id="phone" name="phone" required type="tel">
+                <input class="editorial-input w-100 text-dark" id="phone" minlength="10" name="phone" pattern="^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$" required type="tel">
+                <span class="validation-message" aria-live="polite"></span>
             </div>
 
             <!-- Date of Birth Field -->
             <div class="d-flex flex-column gap-1">
                 <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="dob">Data de Nascimento</label>
-                <input class="editorial-input w-100 text-dark" id="dob" name="dob" required type="date">
+                <input class="editorial-input w-100 text-dark" id="dob" max="2026-12-31" min="1900-01-01" name="dob" required type="date">
+                <span class="validation-message" aria-live="polite"></span>
             </div>
 
             <!-- Password Field -->
             <div class="d-flex flex-column gap-1 mb-2">
                 <label class="fw-semibold text-dark" style="font-size: 0.875rem; letter-spacing: 0.02em;" for="password">Senha</label>
-                <input class="editorial-input w-100 text-dark" id="password" name="password" required type="password">
+                <input class="editorial-input w-100 text-dark" id="password" minlength="8" name="password" required type="password">
+                <span class="validation-message" aria-live="polite"></span>
             </div>
 
             <!-- Submit Button -->
@@ -110,5 +115,6 @@
 
 <!-- Bootstrap 5.3.3 JS Bundle -->
 <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
