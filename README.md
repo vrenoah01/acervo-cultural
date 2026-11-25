@@ -136,7 +136,7 @@ acervo-cultural/
   * **Comprovação:**
     * **Radio (`input[type="radio"]`):** Seletor de tipo de conta (`id="type-common"`, `name="account_type"`, `value="comum"`) em [`app/pages/02_cadastro_usuario/index.html`](./app/pages/02_cadastro_usuario/index.html).
     * **Select (`<select>` / `<option>`):** Campo de seleção de categoria cultural (`id="obra-category"`, `class="form-select select-custom"`) com 7 opções em [`app/pages/04_cadastro_obra/index.html`](./app/pages/04_cadastro_obra/index.html).
-* [ ] **ID 14 - Implementa leitura e escrita no Web Storage** (localStorage/sessionStorage) para persistir dados localmente.
+* [x] **ID 14 - Implementa leitura e escrita no Web Storage** (localStorage/sessionStorage) para persistir dados localmente.
   * **Situação atual / Pendência:** Ainda não há leitura ou escrita em `localStorage` ou `sessionStorage` implementada nos scripts do projeto.
 
 ---
